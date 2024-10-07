@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compatibility Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Compatibility Check</h1>
+    <p>Enter your names to check your compatibility percentage:</p>
+    <input type="text" id="name1" placeholder="Your Name">
+    <br>
+    <input type="text" id="name2" placeholder="Partner's Name">
+    <br>
+    <button onclick="checkCompatibility()">Check Compatibility</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkCompatibility() {
+            var name1 = document.getElementById('name1').value;
+            var name2 = document.getElementById('name2').value;
+
+            if (name1 === "" || name2 === "") {
+                alert("Please enter both names!");
+                return;
+            }
+
+            var compatibility = Math.floor(Math.random() * 101);
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Compatibility Percentage: " + compatibility + "%";
+        }
+    </script>
+</body>
+</html>
